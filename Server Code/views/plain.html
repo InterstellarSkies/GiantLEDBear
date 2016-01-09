@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<link rel='stylesheet', href='/stylesheets/MainScreenStyle.css'>
+<script type="text/javascript" src= "/javascripts/MainScreen.js"></script>
+</head>
+
+<body>
+<form method="post" enctype="multipart/form-data" action="a">
+  <div class="box1">
+    <p>Upload single image files(png,jpg,other static)<br><br>After you upload, some numbers will shows up in the third square. Copy and paste the numbers into your arduino code </p>
+    <input type="button" id="clickme" value="Upload!" />
+    <input type='file' style="visibility:hidden" id="PNGupload" alt="please add the png file" name="PNGs"  onchange="previewFile()" required/>
+  </div>
+
+  <div class="box1">
+    <div class="pixelated">
+          <img id="filePreview" src="" alt="Your uploaded file will show here" height="250" width="250" />
+        </div>
+  </div>
+
+  <div class="box2">
+  <p id="outputText">After uploading your file, copy and paste the text in this box to the arduino code</p>
+  </div>
+</form>
+
+<canvas id="myCanvas" width="32" height="32">
+Your browser does not support the HTML5 canvas tag. That means you cant preview your pixelart before you send
+</canvas>
